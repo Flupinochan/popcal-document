@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私のポートフォリオ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .social-links {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>田中太郎のポートフォリオ</h1>
+        
+        <div class="section">
+            <h2>自己紹介</h2>
+            <p>こんにちは！フロントエンドエンジニアの田中太郎です。HTML、CSS、JavaScriptを使ったウェブ開発を得意としています。</p>
+        </div>
+
+        <div class="section">
+            <h2>スキル</h2>
+            <ul>
+                <li>HTML/CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Git/GitHub</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>プロジェクト</h2>
+            <h3>プロジェクト1：ECサイト</h3>
+            <p>React.jsを使用したレスポンシブなECサイトを開発しました。</p>
+            
+            <h3>プロジェクト2：タスク管理アプリ</h3>
+            <p>Vue.jsとFirebaseを組み合わせたリアルタイムタスク管理アプリを作成しました。</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://github.com/tanaka-taro">GitHub</a>
+            <a href="https://twitter.com/tanaka_taro">Twitter</a>
+            <a href="mailto:tanaka@example.com">Contact</a>
+        </div>
+    </div>
+
+    <script>
+        // 簡単なアニメーション効果
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                container.style.transition = 'all 0.5s ease-in-out';
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
