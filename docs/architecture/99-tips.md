@@ -26,6 +26,8 @@ presentation dto  entity (repository)  dto  datasource (repository)
   - Widgetインスタンスごとにテストが可能なため、テストが分割しやすい
   - 可能な限り複数のWidgetインスタンスに分けて、const Widgetにすることでパフォーマンスがよくなる
     - 1つのWidgetインスタンスにすると全てが再レンダリングされる
+  - Widget関数でref notifierを利用し状態変更して再レンダリングする場合はWidgetインスタンスに分割すべき
+    - ref.watchで単に値を取得し表示するだけの場合はWidget関数でOK
 
 ## Widgetインスタンスの再レンダリング
 
