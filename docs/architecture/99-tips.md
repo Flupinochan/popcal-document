@@ -11,11 +11,11 @@ presentation dto  entity (repository)  dto  datasource (repository)
 
 ## Widget関数とWidgetインスタンス
 
-| 項目                      | Widget関数     | Widgetインスタンス |
-| ------------------------- | -------------- | ------------------ |
-| 状態保持                  | 親Widgetに依存 | 〇                 |
-| テスト                    | ✕              | 〇                 |
-| パフォーマンス(const対応) | ✕              | 〇                 |
+| 項目           | Widget関数                           | Widgetインスタンス |
+| -------------- | ------------------------------------ | ------------------ |
+| 状態保持       | ✕ 親Widgetに依存                     | 〇                 |
+| テスト         | ✕ 状態に依存しないUIやロジックテスト | 〇                 |
+| パフォーマンス | ✕ const非対応                        | 〇                 |
 
 - Widget関数
   - 親contextを引数で受け取ることが基本
@@ -31,7 +31,7 @@ presentation dto  entity (repository)  dto  datasource (repository)
 
 ## Widgetインスタンスの再レンダリング
 
-※Widget関数は親Widgetの再レンダリングに含まれます。以下のWidgetはWidgetインスタンスを意味します
+※Widget関数は親Widgetの再レンダリングに含まれます。以下のWidgetは`Widgetインスタンス`を意味します
 
 - setState、useState、ref.watch()など状態変更がトリガー
 - 親Widgetが再レンダリングされると、子Widgetも再レンダリングされる
@@ -41,7 +41,7 @@ presentation dto  entity (repository)  dto  datasource (repository)
 
 ## Widget関数の引数、BuildContext、Ref
 
-※以下のWidgetはWidget関数を意味します
+※以下のWidgetは`Widget関数`を意味します
 
 - 子Widgetの引数にはcontextから取得したthemeではなくcontextを渡すべき
   - 後でtheme以外をcontextから取得する場合に引数の追加が不要
@@ -56,7 +56,7 @@ presentation dto  entity (repository)  dto  datasource (repository)
 - 再レンダリングされcontextが破棄されるとScaffoldMessengerの利用だけでなくHooksも利用できなくなる
 
 ## 名前付き変数
-- なるべく名前付き変数を利用し、変数の順番に依存せず、バグを防止する
+- 名前付き変数を利用し、変数の順番に依存せず、バグを防止する
 
 ## FutureBuilder、StreamBuilder
 - FutureBuilderやStreamBuilderは利用せず、RiverPodのFutureProviderやStreamProviderでref.watchする方針とする
