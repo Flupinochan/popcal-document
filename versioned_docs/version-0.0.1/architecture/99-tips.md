@@ -1,6 +1,6 @@
 ---
 title: 'Tips'
-description: 'メモです'
+description: 'メモ'
 ---
 
 メモページです。
