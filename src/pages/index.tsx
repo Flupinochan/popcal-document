@@ -36,8 +36,9 @@ function DownloadSection() {
                 最新版
               </Heading>
               <a
-                href="/downloads/app-release.apk"
+                href="/popcal-document/downloads/app-release.apk"
                 className="button button--primary button--lg"
+                target="_blank"
                 download="app-release.apk"
               >
                 Android APK をダウンロード
@@ -51,7 +52,8 @@ function DownloadSection() {
               <ul className={styles.versionList}>
                 <li className="margin-bottom--sm">
                   <a
-                    href="/downloads/versions/v1.0.0/app-release.apk"
+                    href="/popcal-document/downloads/versions/v1.0.0/app-release.apk"
+                    target="_blank"
                     download="app-v1.0.0-release.apk"
                   >
                     v1.0.0
