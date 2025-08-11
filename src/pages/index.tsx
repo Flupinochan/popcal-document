@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
@@ -25,13 +24,16 @@ function HomepageHeader() {
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+    <Layout>
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <div style={{ textAlign: 'center' }}>
+          <a href="https://play.google.com/store/apps/details?id=net.metalmental.popcal" target="_blank" rel="noopener">
+            Download the App
+          </a>
+        </div>
       </main>
-    </Layout>
+    </Layout >
   );
 }

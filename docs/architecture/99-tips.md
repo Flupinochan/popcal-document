@@ -59,4 +59,8 @@ presentation dto  entity (repository)  dto  datasource (repository)
 - 名前付き変数を利用し、変数の順番に依存せず、バグを防止する
 
 ## FutureBuilder、StreamBuilder
-- FutureBuilderやStreamBuilderは利用せず、RiverPodのFutureProviderやStreamProviderでref.watchする方針とする
+- FutureBuilderやStreamBuilderは利用せず、RiverPodのFutureProviderやStreamProviderでref.
+
+## Icon作成手順
+
+https://developer.android.com/studio/write/create-app-icons?hl=ja#create-notification
