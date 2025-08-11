@@ -21,6 +21,52 @@ function HomepageHeader() {
   );
 }
 
+function DownloadSection() {
+  return (
+    <section className={styles.downloadSection}>
+      <div className="container">
+        <div className="row">
+          <div className="col col--8 col--offset-2">
+            <Heading as="h2" className="text--center margin-bottom--lg">
+              アプリダウンロード
+            </Heading>
+
+            <div className="text--center margin-bottom--lg">
+              <Heading as="h3" className="margin-bottom--md">
+                最新版
+              </Heading>
+              <a
+                href="/downloads/app-release.apk"
+                className="button button--primary button--lg"
+                download="app-release.apk"
+              >
+                Android APK をダウンロード
+              </a>
+            </div>
+
+            <div>
+              <Heading as="h3" className="margin-bottom--md">
+                バージョン別ダウンロード
+              </Heading>
+              <ul className={styles.versionList}>
+                <li className="margin-bottom--sm">
+                  <a
+                    href="/downloads/versions/v1.0.0/app-release.apk"
+                    download="app-v1.0.0-release.apk"
+                  >
+                    v1.0.0
+                  </a>
+                  {' - 2025/08/11 リリース'}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -28,12 +74,8 @@ export default function Home(): ReactNode {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
-        <div style={{ textAlign: 'center' }}>
-          <a href="https://play.google.com/store/apps/details?id=net.metalmental.popcal" target="_blank" rel="noopener">
-            Download the App
-          </a>
-        </div>
+        <DownloadSection />
       </main>
-    </Layout >
+    </Layout>
   );
 }
