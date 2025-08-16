@@ -1,9 +1,103 @@
 ---
-title: 'フォルダ構造'
-description: 'フォルダ構造のルール'
+title: 'フロー図・フォルダ構造'
+description: 'アーキテクチャの説明'
 ---
 
-## 依存関係図
+### 全体図
+
+以下6つのフォルダで構成されます
+
+```mermaid
+flowchart LR
+    X[Provider]
+    P[Presentation]
+    U[UseCase]
+    R[Repository]
+    G[Gateway]
+    E[Domain<br>（Entity）]
+    S[Domain<br>（Domain Service）]
+
+    P e1@--> U e2@--> R
+    U e3@--> G
+    U e4@--> S
+    R e5@--> E
+    G e6@--> E
+    S e7@--> E
+    
+    e1@{ animate: true }
+    e2@{ animate: true }
+    e3@{ animate: true }
+    e4@{ animate: true }
+    e5@{ animate: true }
+    e6@{ animate: true }
+    e7@{ animate: true }
+```
+
+| フォルダ     | 説明                                               |
+| ------------ | -------------------------------------------------- |
+| Provider     | RiverPodを使用したDependency Injection・状態管理   |
+| Presentation | WidgetによるUI表示                                 |
+| UseCase      | Repository・Gateway・Domain Serviceの処理を実行    |
+| Repository   | データ保存処理                                     |
+| Gateway      | データ保存以外の外部APIを使用した処理              |
+| Domain       | Entity・Value Objectの定義、独自のビジネスロジック |
+
+#### 処理例
+
+1. Presentationでローテーション作成Buttonをクリック
+2. UseCaseが実行される
+3. Repositoryを使用しローテーション設定をDBに保存
+4. Domain Serviceでローテーション設定を元に30日分の通知設定を計算
+5. Gatewayで30日分の通知設定を登録
+
+:::caution
+実際はUseCaseでInterfaceを経由してRepositoryやGatewayを利用するため正確な図ではないですが、Repository・Gateway・Domain Serviceが各用途に応じてフォルダ分けしロジックを定義する部分であり、UseCaseがそれらのロジックを組み合わせて実行する部分であることが分かれば幸いです
+:::
+
+:::note
+今後はUseCaseに集約している処理をBlocを利用したEvent駆動にすることで、UseCaseの肥大化を解消し、ロジックの並行処理をしやすくしたいと考えています
+:::
+
+### Provider (RiverPod)
+
+```mermaid
+flowchart BT
+    X[Provider]
+    P[Presentation]
+    U[UseCase]
+    R[Repository]
+    G[Gateway]
+
+    P --> X
+    U --> X
+    R --> X
+    G --> X
+```
+<br/>
+RiverPodには様々な機能があり、以下3つの機能に応じてファイル名を分けています<br/>
+xxx_notifierは、Redux<br/>
+xxx_loaderは、TanStack Queryに近い気がします
+
+| ファイル名    | 機能                                                            |
+| ------------- | --------------------------------------------------------------- |
+| xxx_providers | Dependency Injection                                            |
+| xxx_notifier  | ViewModel （状態管理するClassでありButtonなどをトリガーに実行） |
+| xxx_loader    | Future/Streamを戻り値とするデータ取得用Method                   |
+
+:::info
+DIは、UseCase・Repository・Gateway・Domain Serviceが対象です。PresentationはDIせず、ref.watchします。理由としては、直接ref.watchすることでFutureやStream、Stateに応じてWidgetを再レンダリング、リアルタイム描画が可能になるからです。
+:::
+
+### Presentation と UseCase
+
+```mermaid
+flowchart LR
+    A[Presentation<br>（Widget）]
+    V[ViewModel<br>（RiverPod Notifier）]
+    U[UseCase]
+
+    A -->|DTO| V -->|Entity| U
+```
 
 ## フォルダ構造
 

@@ -22,6 +22,7 @@ function HomepageHeader() {
 }
 
 function DownloadSection() {
+  const latestVersion = "/popcal-document/downloads/versions/v1.3.0/app-arm64-v8a-release.apk";
   return (
     <section className={styles.downloadSection}>
       <div className="container">
@@ -36,7 +37,7 @@ function DownloadSection() {
                 最新版
               </Heading>
               <a
-                href="/popcal-document/downloads/app-release.apk"
+                href={latestVersion}
                 className="button button--primary button--lg"
                 target="_blank"
                 download="app-release.apk"
@@ -58,7 +59,17 @@ function DownloadSection() {
                   >
                     v1.0.0
                   </a>
-                  {' - 2025/08/11 リリース'}
+                  {' - 2025/08/11 初リリース'}
+                </li>
+                <li className="margin-bottom--sm">
+                  <a
+                    href={latestVersion}
+                    target="_blank"
+                    download="app-v1.3.0-release.apk"
+                  >
+                    v1.3.0
+                  </a>
+                  {' - 2025/08/16 スキップ・月営業日通知 機能を追加'}
                 </li>
               </ul>
             </div>
