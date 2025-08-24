@@ -3,13 +3,12 @@ title: '命名規則'
 description: 'フォルダ・ファイル名のルール'
 ---
 
-## 命名規則
-
 - フォルダ名は複数形で、ファイル名は単数形
 - ファイル名とクラス名は合わせる
 - 実装方式を含む場合は末尾に付ける（_firebase, _local, _impl）
 
-### Domain
+## Domain
+
 ```yaml
 domain/
 ├── entities/
@@ -27,7 +26,7 @@ domain/
     └── {gateway_name}_gateway.dart           # notification_gateway.dart
 ```
 
-### Infrastructure
+## Infrastructure
 
 ```yaml
 infrastructure/
@@ -42,7 +41,7 @@ infrastructure/
     └── {gateway_name}_gateway_impl.dart             # notification_gateway_impl.dart
 ```
 
-### Presentation
+## Presentation
 
 ```yaml
 presentation/
@@ -58,7 +57,7 @@ presentation/
     └── {enum_name}.dart                         # auth_mode.dart
 ```
 
-### Use Cases
+## Use Cases
 
 ```yaml
 use_cases/
@@ -66,12 +65,11 @@ use_cases/
 └── {process_name}_use_case.dart            # sync_notifications_use_case.dart
 ```
 
-### Providers (RiverPod)
+## Providers (RiverPod)
 
 ```yaml
 providers/
 ├── {feature_name}_providers.dart      # rotation_providers.dart (DI依存関係定義)
-├── {feature_name}_notifier.dart       # rotation_notifier.dart (状態管理+ビジネスロジック)
-├── {feature_name}_stream.dart         # rotation_stream.dart (StreamのEntityをDtoに変換)
-└── {feature_name}_loader.dart         # rotation_loader.dart (複数のFutureデータ取得)
+├── {feature_name}_notifier.dart       # rotation_notifier.dart (状態管理、Class型)
+└── {feature_name}_handlers.dart       # rotation_handlers.dart (Future/Stream戻り値のMethod型)
 ```

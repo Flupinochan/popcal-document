@@ -1,5 +1,6 @@
 ---
 title: 'プライバシーポリシー'
+description: 'Google Play Store用'
 ---
 
 **最終更新日：2025年8月10日**

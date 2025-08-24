@@ -93,9 +93,13 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} MetalMental. All rights reserved.`,
     },
+    colorMode: {
+      defaultMode: 'dark'
+    },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.palenight,
+      darkTheme: prismThemes.vsDark,
+      additionalLanguages: ['dart'],
     },
   } satisfies Preset.ThemeConfig,
 

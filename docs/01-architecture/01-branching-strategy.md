@@ -1,6 +1,6 @@
 ---
 title: 'ブランチ戦略・開発手順'
-description: 'issueベースの開発'
+description: 'コミット、プルリクエストルール'
 # 利用可能なFront Matter
 # https://docusaurus.io/docs/next/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter
 # Mermaid記法
@@ -23,39 +23,39 @@ gitGraph LR:
     checkout master
     commit
     commit
-    branch "issue/1-update-readme"
-    checkout "issue/1-update-readme"
+    branch "1-update-readme"
+    checkout "1-update-readme"
     commit
     commit
     checkout master
-    merge "issue/1-update-readme"
-    branch "issue/2-add-auth"
-    checkout "issue/2-add-auth"
+    merge "1-update-readme"
+    branch "2-add-auth"
+    checkout "2-add-auth"
     commit
     checkout master
-    merge "issue/2-add-auth"
-    branch "release/v1.0.0" order: 1
-    checkout "release/v1.0.0" 
+    merge "2-add-auth"
+    branch "v1.0.0" order: 1
+    checkout "v1.0.0" 
     commit tag: "v1.0.0"
     checkout master
-    branch "issue/3-fix-validation"
-    checkout "issue/3-fix-validation"
+    branch "3-fix-validation"
+    checkout "3-fix-validation"
     commit
     commit
     checkout master
-    merge "issue/3-fix-validation"
-    branch "release/v2.0.0" order: 1
-    checkout "release/v2.0.0" 
+    merge "3-fix-validation"
+    branch "v2.0.0" order: 1
+    checkout "v2.0.0" 
     commit tag: "v2.0.0"
 ```
 
 ## 3種類のブランチ
 
-| ブランチ名 (例)       | 説明                                 |
-| --------------------- | ------------------------------------ |
-| issue/1-update-readme | 各issue番号に対応する開発用ブランチ  |
-| master                | 各issueブランチをマージするブランチ  |
-| release/v1.0.0        | masterから派生するリリース用ブランチ |
+| ブランチ名 (例) | 説明                                 |
+| --------------- | ------------------------------------ |
+| 1-update-readme | 各issue番号に対応する開発用ブランチ  |
+| master          | 各issueブランチをマージするブランチ  |
+| v1.0.0          | masterから派生するリリース用ブランチ |
 
 ## 開発手順
 
@@ -64,6 +64,14 @@ gitGraph LR:
 3. issueブランチで開発を行う
 4. 開発完了後、masterブランチに対してプルリクエストを作成する
 5. リリースするタイミングでreleaseブランチを切る
+
+## コミットルール
+
+以下のようにイシュー番号をつけておくとよい
+
+```
+#10 update README.md
+```
 
 ## プルリクエスト ルール
 
