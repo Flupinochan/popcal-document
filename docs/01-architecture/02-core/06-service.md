@@ -11,7 +11,7 @@ description: 'Serviceの定義'
   - Use Case
     - Clean Architectureが起源
 - Application Service と Domain Service が紛らわしいため、本アプリでは UseCase と呼びます
-- UseCase (Application Service) については、[UseCase](UseCase) を参考にしてください
+- UseCase (Application Service) については、[UseCase](usecase) を参考にしてください
 
 ## Domain Service とは
 

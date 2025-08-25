@@ -4,8 +4,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './index.module.css';
+import 'swiper/css';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -47,7 +48,7 @@ function DownloadSection() {
             </div>
 
             <div>
-              <Heading as="h3" className="margin-bottom--md">
+              <Heading as="h3" className="margin-bottom--md" style={{ color: 'var(--ifm-color-primary)' }}>
                 バージョン別ダウンロード
               </Heading>
               <ul className={styles.versionList}>
@@ -80,6 +81,26 @@ function DownloadSection() {
   );
 }
 
+function SwiperSection() {
+  return (
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={1}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      {Array.from({ length: 8 }, (_, i) => (
+        <SwiperSlide key={i}>
+          <img
+            src={`img/swiper/${i + 1}.png`}
+            alt={`Slide ${i + 1}`}
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+}
+
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -87,7 +108,20 @@ export default function Home(): ReactNode {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
-        <DownloadSection />
+        <div style={{ display: 'flex' }}>
+          <div style={{ flex: 1 }}>
+            <DownloadSection />
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{
+              width: 300,
+              margin: '0 auto'
+            }}>
+              <SwiperSection />
+            </div>
+          </div>
+        </div>
+
       </main>
     </Layout>
   );

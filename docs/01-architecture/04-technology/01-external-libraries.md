@@ -4,4 +4,4 @@ description: '使用している外部ライブラリ'
 ---
 
 - Firebase
-  - 
+- Effective Dart Style
