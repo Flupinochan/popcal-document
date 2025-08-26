@@ -18,7 +18,11 @@
     "@docusaurus/core": "3.8.1",
     "@docusaurus/preset-classic": "3.8.1",
     "@docusaurus/theme-mermaid": "^3.8.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@mdx-js/react": "^3.0.0",
+    "@mui/icons-material": "^7.3.1",
+    "@mui/material": "^7.3.1",
     "clsx": "^2.0.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
@@ -26,10 +30,19 @@
     "swiper": "^11.2.10"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.2.2",
+    "@docusaurus/eslint-plugin": "^3.8.1",
     "@docusaurus/module-type-aliases": "3.8.1",
     "@docusaurus/tsconfig": "3.8.1",
     "@docusaurus/types": "3.8.1",
-    "typescript": "~5.6.2"
+    "@eslint/js": "^9.34.0",
+    "@types/eslint": "^9.6.1",
+    "eslint": "^9.34.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.3.0",
+    "jiti": "^2.5.1",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.41.0"
   },
   "browserslist": {
     "production": [
