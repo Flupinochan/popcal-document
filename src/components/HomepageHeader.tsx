@@ -1,16 +1,19 @@
 import Heading from "@theme/Heading";
-import clsx from "clsx";
-import styles from "../css/index.module.css";
 
 const HomepageHeader = () => {
   return (
-    <header className={clsx("hero", styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          PopCal is a rotation management app
-        </Heading>
-      </div>
-    </header>
+    <Heading
+      as="h1"
+      className="hero__title"
+      style={{
+        background: "linear-gradient(90deg, #3b82f6, #06b6d4)",
+        backgroundClip: "text",
+        WebkitBackgroundClip: "text",
+        color: "transparent",
+      }}
+    >
+      PopCal is a rotation management app
+    </Heading>
   );
 };
 

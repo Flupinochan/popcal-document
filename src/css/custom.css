@@ -37,3 +37,8 @@
   --ifm-color-primary-lightest: #dbeafe;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.layout-style {
+  display: flex;
+  align-items: center;
+}
