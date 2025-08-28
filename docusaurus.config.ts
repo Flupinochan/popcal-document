@@ -1,92 +1,95 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import type * as Preset from "@docusaurus/preset-classic";
+import type { Config } from "@docusaurus/types";
+import { themes as prismThemes } from "prism-react-renderer";
 
 const config: Config = {
-  title: 'PopCal Document',
-  tagline: 'Popup notifications and Calendar scheduling for meeting facilitators and note-takers on a mobile app.',
-  favicon: 'img/favicon.ico',
+  title: "PopCal Document",
+  tagline:
+    "Popup notifications and Calendar scheduling for meeting facilitators and note-takers on a mobile app.",
+  favicon: "img/favicon.ico",
 
   future: {
     v4: true,
   },
 
-  url: 'https://flupinochan.github.io',
-  baseUrl: '/popcal-document/',
+  url: "https://flupinochan.github.io",
+  baseUrl: "/popcal-document/",
 
-  organizationName: 'Flupinochan',
-  projectName: 'popcal-document',
+  organizationName: "Flupinochan",
+  projectName: "popcal-document",
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   i18n: {
-    defaultLocale: 'ja',
-    locales: ['ja'],
+    defaultLocale: "ja",
+    locales: ["ja"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
         },
         blog: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.module.scss",
         },
       } satisfies Preset.Options,
     ],
   ],
 
+  plugins: ["docusaurus-plugin-sass"],
+
   themeConfig: {
-    image: 'img/social-card.png',
+    image: "img/social-card.png",
     navbar: {
-      title: 'PopCal',
+      title: "PopCal",
       logo: {
-        alt: 'PopCal Logo',
-        src: 'img/logo.png',
+        alt: "PopCal Logo",
+        src: "img/logo.png",
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'アーキテクチャ',
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
+          position: "left",
+          label: "アーキテクチャ",
         },
         {
-          href: 'https://github.com/Flupinochan/popcal',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/Flupinochan/popcal",
+          label: "GitHub",
+          position: "right",
         },
         {
-          type: 'docsVersionDropdown',
+          type: "docsVersionDropdown",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'アーキテクチャ',
-              to: '/docs/next/category/アーキテクチャ',
+              label: "アーキテクチャ",
+              to: "/docs/next/category/アーキテクチャ",
             },
           ],
         },
         {
-          title: 'Contact',
+          title: "Contact",
           items: [
             {
-              label: 'Home Page',
-              href: 'https://metalmental.net/',
+              label: "Home Page",
+              href: "https://metalmental.net/",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/Flupinochan',
+              label: "GitHub",
+              href: "https://github.com/Flupinochan",
             },
           ],
         },
@@ -94,19 +97,19 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} MetalMental. All rights reserved.`,
     },
     colorMode: {
-      defaultMode: 'dark'
+      defaultMode: "dark",
     },
     prism: {
       theme: prismThemes.palenight,
       darkTheme: prismThemes.vsDark,
-      additionalLanguages: ['dart'],
+      additionalLanguages: ["dart"],
     },
   } satisfies Preset.ThemeConfig,
 
   markdown: {
     mermaid: true,
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ["@docusaurus/theme-mermaid"],
 };
 
 export default config;

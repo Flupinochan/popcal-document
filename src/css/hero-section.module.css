@@ -1,0 +1,17 @@
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.heroTitle {
+  line-height: 1.45;
+  margin: 0;
+  margin-top: 90px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}

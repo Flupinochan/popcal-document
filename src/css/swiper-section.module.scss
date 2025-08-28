@@ -1,0 +1,26 @@
+.swiperContainer {
+  width: 480px;
+  padding: 0px 50px 30px 50px;
+  user-select: none;
+}
+
+.swiperSlide {
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.swiperContainer {
+  :global(.swiper-button-next),
+  :global(.swiper-button-prev) {
+    color: var(--ifm-color-primary);
+  }
+}
+
+.swiperContainer {
+  :global(.swiper-pagination-bullet-active) {
+    background-color: var(--ifm-color-primary);
+  }
+}

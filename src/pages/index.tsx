@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import HeroSection from "../components/HeroSection";
 import HomepageHeader from "../components/HomepageHeader";
 import SwiperSection from "../components/SwiperSection";
-import "../css/custom.css";
+import "../css/custom.module.scss";
 
 export default function Home(): ReactNode {
   return (
