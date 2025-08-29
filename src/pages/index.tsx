@@ -16,8 +16,9 @@ export default function Home(): ReactNode {
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
-          padding: { xs: 0, md: "80px 120px" },
-          gap: { xs: 0, md: 60 },
+          py: { xs: 2, md: 10 },
+          px: { xs: 2, md: 0 },
+          gap: { xs: 0, md: 7.5 },
         }}
       >
         <TopSection />

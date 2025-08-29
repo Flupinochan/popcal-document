@@ -51,7 +51,7 @@ const LeftSection = () => {
         <SubText text="カレンダー表示で次回の担当者が一目で分かります" />
         <SubText text="休日やスキップ機能を搭載した通知機能で柔軟な運用が可能です" />
       </Stack>
-      <Stack direction={"row"} gap={4}>
+      <Stack direction={{ xs: "column", sm: "row" }} gap={4}>
         <a
           className="button button--lg button--primary button--outline"
           href="/popcal-document/downloads/app-release.apk"
