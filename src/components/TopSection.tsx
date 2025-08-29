@@ -1,6 +1,6 @@
 import Heading from "@theme/Heading";
 
-const HomepageHeader = () => {
+const TopSection = () => {
   return (
     <Heading
       as="h1"
@@ -17,4 +17,4 @@ const HomepageHeader = () => {
   );
 };
 
-export default HomepageHeader;
+export default TopSection;

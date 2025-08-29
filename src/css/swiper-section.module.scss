@@ -1,12 +1,15 @@
 .swiperContainer {
-  width: 480px;
-  padding: 0px 50px 30px 50px;
+  display: flex;
+  width: 420px;
+  min-width: 420px;
+  padding: 30px 50px;
   user-select: none;
+  margin: 0;
 }
 
 .swiperSlide {
   img {
-    width: 100%;
+    width: stretch;
     height: auto;
     display: block;
   }

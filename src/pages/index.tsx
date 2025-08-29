@@ -1,34 +1,31 @@
+import { Container } from "@mui/material";
+import Stack from "@mui/material/Stack";
 import Layout from "@theme/Layout";
 import type { ReactNode } from "react";
-import HeroSection from "../components/HeroSection";
-import HomepageHeader from "../components/HomepageHeader";
-import SwiperSection from "../components/SwiperSection";
+import LeftSection from "../components/LeftSection";
+import RightSection from "../components/RightSection";
+import TopSection from "../components/TopSection";
 import "../css/custom.module.scss";
 
 export default function Home(): ReactNode {
   return (
     <Layout wrapperClassName="layout-style">
-      <main
-        style={{
+      <Container
+        sx={{
           maxWidth: 1600,
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
-          padding: "80px 120px 80px 120px",
-          gap: 60,
+          padding: { xs: 0, md: "80px 120px" },
+          gap: { xs: 0, md: 60 },
         }}
       >
-        <HomepageHeader />
-        <div
-          style={{
-            display: "flex",
-            gap: 120,
-          }}
-        >
-          <HeroSection />
-          <SwiperSection />
-        </div>
-      </main>
+        <TopSection />
+        <Stack direction={{ xs: "column-reverse", md: "row" }} gap={10}>
+          <LeftSection />
+          <RightSection />
+        </Stack>
+      </Container>
     </Layout>
   );
 }

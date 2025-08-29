@@ -5,7 +5,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "../css/swiper-section.module.scss";
 
-const SwiperSection = () => {
+const RightSection = () => {
   return (
     <Swiper
       className={styles.swiperContainer}
@@ -35,4 +35,4 @@ const SwiperSection = () => {
   );
 };
 
-export default SwiperSection;
+export default RightSection;

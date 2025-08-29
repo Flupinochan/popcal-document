@@ -1,0 +1,27 @@
+$purple: #8b5cf6;
+$cyan: #06b6d4;
+$pink: #ec4899;
+$green: #10b981;
+
+@mixin card-color($color) {
+  height: stretch;
+  border: 1px solid $color;
+
+  svg {
+    color: $color;
+    font-size: 30px;
+  }
+}
+
+.cardPurple {
+  @include card-color($purple);
+}
+.cardCyan {
+  @include card-color($cyan);
+}
+.cardPink {
+  @include card-color($pink);
+}
+.cardGreen {
+  @include card-color($green);
+}
