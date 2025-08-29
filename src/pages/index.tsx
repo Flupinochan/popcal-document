@@ -22,7 +22,11 @@ export default function Home(): ReactNode {
         }}
       >
         <TopSection />
-        <Stack direction={{ xs: "column-reverse", md: "row" }} gap={10}>
+        <Stack
+          direction={{ xs: "column-reverse", md: "row" }}
+          gap={10}
+          alignItems={"center"}
+        >
           <LeftSection />
           <RightSection />
         </Stack>

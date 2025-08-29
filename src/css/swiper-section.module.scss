@@ -5,6 +5,20 @@
   padding: 30px 50px;
   user-select: none;
   margin: 0;
+
+  // xsサイズ対応
+  @media screen and (max-width: 599px) {
+    width: 100%;
+    min-width: auto;
+    max-width: 370px;
+    padding: 0px;
+
+    // 矢印非表示
+    :global(.swiper-button-next),
+    :global(.swiper-button-prev) {
+      display: none;
+    }
+  }
 }
 
 .swiperSlide {
