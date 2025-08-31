@@ -5,10 +5,6 @@ description: 'メモ'
 
 メモページです。
 
-## 依存関係図
-
-presentation dto  entity (repository)  dto  datasource (repository)
-
 ## Widget関数とWidgetインスタンス
 
 | 項目           | Widget関数                           | Widgetインスタンス |
@@ -54,12 +50,6 @@ presentation dto  entity (repository)  dto  datasource (repository)
 
 - 非同期処理の後に showDialog や ScaffoldMessenger を使用する場合は、if (context.mounted) でチェックすると安全性が高い
 - 再レンダリングされcontextが破棄されるとScaffoldMessengerの利用だけでなくHooksも利用できなくなる
-
-## 名前付き変数
-- 名前付き変数を利用し、変数の順番に依存せず、バグを防止する
-
-## FutureBuilder、StreamBuilder
-- FutureBuilderやStreamBuilderは利用せず、RiverPodのFutureProviderやStreamProviderでref.
 
 ## Icon作成手順
 

@@ -22,7 +22,7 @@ description: 'VSCode, Warp...'
     - tmuxのような分割機能
 ## GitHub
   - コード管理
-    - GitHub Pages
+    - Pages
       - Documentページの作成
         - Docusaurus
         - Mermaid
@@ -30,3 +30,8 @@ description: 'VSCode, Warp...'
       - セキュリティチェック
     - Gemini Code Assist
       - コードレビュー
+    - Workflow、Action
+      - CI/CD
+        - テスト
+        - ビルド
+        - リリースノート

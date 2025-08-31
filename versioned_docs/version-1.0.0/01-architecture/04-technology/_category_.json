@@ -1,0 +1,7 @@
+{
+  "label": "外部ライブラリ",
+  "description": "使用している外部ライブラリの説明",
+  "link": {
+    "type": "generated-index"
+  }
+}
